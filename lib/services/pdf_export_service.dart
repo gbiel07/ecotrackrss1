@@ -221,7 +221,7 @@ class PdfExportService {
         child: pw.Column(
           crossAxisAlignment: pw.CrossAxisAlignment.start,
           children: [
-            pw.Text(value, style: pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold)),
+            pw.Text(value, style: const pw.TextStyle(fontSize: 18, fontWeight: pw.FontWeight.bold)),
             pw.Text(label, style: pw.TextStyle(fontSize: 9, color: _muted)),
           ],
         ),

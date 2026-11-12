@@ -1,0 +1,60 @@
+name: ecotrack_rss
+description: "EcoTrack RSS - rastreamento e gestão de resíduos de serviços de saúde (RSS) em Flutter."
+publish_to: "none"
+version: 2.0.0+1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Gerenciamento de estado
+  provider: ^6.1.2
+  # Persistência local (equivalente ao localStorage da versão web)
+  shared_preferences: ^2.3.2
+  # Datas e números em pt-BR
+  intl: any
+  # Geração do QR Code do lote
+  qr_flutter: ^4.1.0
+  # Leitura de QR Code pela câmera
+  mobile_scanner: ^7.0.1
+  # Exportação em PDF e impressão
+  pdf: ^3.11.1
+  printing: ^5.13.4
+  # Salvar/compartilhar relatório .txt
+  share_plus: ^10.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: DMSans
+      fonts:
+        - asset: assets/fonts/DMSans-400.ttf
+          weight: 400
+        - asset: assets/fonts/DMSans-500.ttf
+          weight: 500
+        - asset: assets/fonts/DMSans-600.ttf
+          weight: 600
+        - asset: assets/fonts/DMSans-700.ttf
+          weight: 700
+    - family: Manrope
+      fonts:
+        - asset: assets/fonts/Manrope-500.ttf
+          weight: 500
+        - asset: assets/fonts/Manrope-600.ttf
+          weight: 600
+        - asset: assets/fonts/Manrope-700.ttf
+          weight: 700
+        - asset: assets/fonts/Manrope-800.ttf
+          weight: 800

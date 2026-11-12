@@ -1,0 +1,22 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    # A partir do Flutter 3.47, `package:flutter/material.dart` passou a ser
+    # marcado como obsoleto em favor do pacote `material_ui`. O projeto mantém
+    # o import tradicional para continuar compilando em versões anteriores do
+    # Flutter (laboratórios e máquinas dos avaliadores).
+    deprecated_member_use: ignore
+  exclude:
+    - build/**
+
+linter:
+  rules:
+    - prefer_const_constructors
+    - prefer_const_declarations
+    - prefer_final_locals
+    - prefer_single_quotes
+    - sort_child_properties_last
+    - use_super_parameters
+    - avoid_print
+    - always_declare_return_types

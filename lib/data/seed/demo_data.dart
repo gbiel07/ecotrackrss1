@@ -1,0 +1,155 @@
+import '../../core/constants/app_constants.dart';
+import '../models/ecotrack_data.dart';
+import '../models/movement.dart';
+import '../models/occurrence.dart';
+import '../models/waste_lot.dart';
+
+/// Registros de demonstração criados no primeiro acesso (mesmos da versão web).
+abstract final class DemoData {
+  static EcoTrackData build(DateTime now) {
+    DateTime daysAgo(int offset) => now.subtract(Duration(days: offset));
+
+    return EcoTrackData(
+      lots: [
+        WasteLot(
+          id: 'RSS-2026-001',
+          description: 'Materiais de curativo e gaze',
+          group: 'A',
+          sector: 'Pronto atendimento',
+          quantity: 18,
+          unit: 'kg',
+          responsible: 'Marcos Oliveira',
+          createdAt: daysAgo(0),
+          status: LotStatus.stored,
+          destination: 'Central de resíduos',
+          notes: 'Acondicionado em recipiente identificado',
+        ),
+        WasteLot(
+          id: 'RSS-2026-002',
+          description: 'Reagentes laboratoriais vencidos',
+          group: 'B',
+          sector: 'Laboratório',
+          quantity: 7,
+          unit: 'L',
+          responsible: 'Marcos Oliveira',
+          createdAt: daysAgo(1),
+          status: LotStatus.inTransport,
+          destination: 'Empresa licenciada',
+          notes: 'Coleta programada',
+        ),
+        WasteLot(
+          id: 'RSS-2026-003',
+          description: 'Papel e embalagens não contaminadas',
+          group: 'D',
+          sector: 'Administrativo',
+          quantity: 32,
+          unit: 'kg',
+          responsible: 'Juliana Costa',
+          createdAt: daysAgo(2),
+          status: LotStatus.completed,
+          destination: 'Cooperativa autorizada',
+        ),
+        WasteLot(
+          id: 'RSS-2026-004',
+          description: 'Agulhas e materiais perfurocortantes',
+          group: 'E',
+          sector: 'Sala de vacinação',
+          quantity: 5,
+          unit: 'kg',
+          responsible: 'Marcos Oliveira',
+          createdAt: daysAgo(3),
+          status: LotStatus.stored,
+          destination: 'Central de resíduos',
+          notes: 'Coletor rígido identificado',
+        ),
+        WasteLot(
+          id: 'RSS-2026-005',
+          description: 'Resíduo de procedimento assistencial',
+          group: 'A',
+          sector: 'Enfermaria',
+          quantity: 12,
+          unit: 'kg',
+          responsible: 'Juliana Costa',
+          createdAt: daysAgo(4),
+          status: LotStatus.inTreatment,
+          destination: 'Empresa licenciada',
+          notes: 'Aguardando comprovante',
+        ),
+      ],
+      movements: [
+        Movement(
+          id: 'MOV-0005',
+          lotId: 'RSS-2026-001',
+          action: 'Lote conferido',
+          from: 'Pronto atendimento',
+          to: 'Central de resíduos',
+          responsible: 'Marcos Oliveira',
+          date: daysAgo(0),
+          notes: 'Conferência inicial',
+        ),
+        Movement(
+          id: 'MOV-0004',
+          lotId: 'RSS-2026-002',
+          action: 'Coleta confirmada',
+          from: 'Laboratório',
+          to: 'Empresa licenciada',
+          responsible: 'Marcos Oliveira',
+          date: daysAgo(1),
+          notes: 'Retirada registrada',
+        ),
+        Movement(
+          id: 'MOV-0003',
+          lotId: 'RSS-2026-003',
+          action: 'Destinação concluída',
+          from: 'Armazenamento temporário',
+          to: 'Cooperativa autorizada',
+          responsible: 'Juliana Costa',
+          date: daysAgo(2),
+        ),
+        Movement(
+          id: 'MOV-0002',
+          lotId: 'RSS-2026-004',
+          action: 'Lote acondicionado',
+          from: 'Sala de vacinação',
+          to: 'Central de resíduos',
+          responsible: 'Marcos Oliveira',
+          date: daysAgo(3),
+        ),
+        Movement(
+          id: 'MOV-0001',
+          lotId: 'RSS-2026-005',
+          action: 'Lote registrado',
+          from: 'Enfermaria',
+          to: 'Armazenamento temporário',
+          responsible: 'Juliana Costa',
+          date: daysAgo(4),
+        ),
+      ],
+      occurrences: [
+        Occurrence(
+          id: 'OCO-001',
+          lotId: 'RSS-2026-002',
+          type: 'Atraso na coleta',
+          description: 'Coleta ocorreu após o horário previsto. Solicita-se acompanhamento do prazo.',
+          priority: OccurrencePriority.medium,
+          status: OccurrenceStatus.inAnalysis,
+          responsible: 'Marcos Oliveira',
+          date: daysAgo(1),
+        ),
+        Occurrence(
+          id: 'OCO-002',
+          lotId: 'RSS-2026-005',
+          type: 'Documento pendente',
+          description: 'Comprovante de destinação final ainda não anexado ao registro.',
+          priority: OccurrencePriority.high,
+          status: OccurrenceStatus.pending,
+          responsible: 'Juliana Costa',
+          date: daysAgo(0),
+        ),
+      ],
+      nextLot: 6,
+      nextMovement: 6,
+      nextOccurrence: 3,
+    );
+  }
+}

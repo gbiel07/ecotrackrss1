@@ -4,9 +4,7 @@
 
 O EcoTrack RSS é um aplicativo em Flutter para clínicas, hospitais e laboratórios que precisam controlar o descarte de resíduos de serviços de saúde (RSS). Cada lote recebe um código e um QR Code próprios, e a equipe registra cada etapa do caminho (acondicionamento, coleta interna, armazenamento, coleta externa, tratamento e destinação). O gestor acompanha os indicadores em um dashboard, e qualquer desvio, como atraso na coleta ou documento pendente, vira uma ocorrência com prioridade e status.
 
-Esta versão é a migração para Flutter/Dart do protótipo web feito em HTML, CSS e JavaScript, mantendo o mesmo layout, as mesmas telas, os mesmos dados de demonstração e o mesmo formato de armazenamento.
 
----
 
 ## Sumário
 
@@ -115,7 +113,7 @@ Algumas decisões que valem destacar: o `EcoTrackController` atualiza a tela ime
 
 ```bash
 # 1. Clonar o repositório
-git clone https://github.com/<usuario>/<repositorio>.git
+git clone https://github.com/gbiel07/ecotrackrss1.git
 cd ecotrack_rss
 
 # 2. Gerar as pastas de plataforma e instalar as dependências (apenas na primeira vez)
@@ -187,13 +185,9 @@ A Central de IA não usa modelo generativo. Ela identifica palavras-chave e apli
 
 ## Integrantes
 
-| Nome | Papel no projeto | GitHub |
-| --- | --- | --- |
-| _Nome do integrante 1_ | _Ex.: desenvolvimento Flutter e arquitetura_ | `@usuario` |
-| _Nome do integrante 2_ | _Ex.: UI/UX e identidade visual_ | `@usuario` |
-| _Nome do integrante 3_ | _Ex.: pitch, mercado e modelo de negócio_ | `@usuario` |
-| _Nome do integrante 4_ | _Ex.: testes, vídeo e validação com usuários_ | `@usuario` |
+Gabriel Luiz Vicente Soares
+Vitor Souza Pereira
+Vitor Hugo Felix Teixeira
+Vinicius Freitas da Silva
 
----
 
-Projeto acadêmico desenvolvido para a disciplina de Desenvolvimento de Aplicativos em Flutter.
